@@ -5,6 +5,12 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
   return {
+
+      build: {
+        rollupOptions: {
+          external: ['react', 'react-dom'],
+        },
+      },
     define: {
       'process.env.URL_link': JSON.stringify(env.URL_link),
       // 'process.env.GOOGLE_CLIENT_ID': JSON.stringify(env.GOOGLE_CLIENT_ID),
@@ -13,3 +19,4 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
   }
 })
+
