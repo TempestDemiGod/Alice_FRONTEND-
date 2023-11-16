@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   return {
 
       build: {
-        outDir: 'build',
+        outDir: 'dist',
         rollupOptions: {
           external: ['react', 'react-dom'],
         },
